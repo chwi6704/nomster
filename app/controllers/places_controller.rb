@@ -20,6 +20,7 @@ end
   def show
     @place = Place.find(params[:id])
     @comment = Comment.new
+    @photo = Photo.new
   end
 
   def edit
@@ -56,7 +57,7 @@ end
   private
 
   def place_params
-    params.require(:place).permit(:name, :description, :address)
+    params.require(:place).permit(:name, :description, :address, :user_id)
   end
 
 end
